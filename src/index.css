@@ -1,0 +1,334 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin:0;
+}
+
+
+.background {
+  background-image: url("/diamond.png");
+  background-repeat: repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: 50px 80px;
+
+  filter: grayscale(45%) brightness(86%);
+  
+  margin: 0;
+  padding: 0;
+
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(149, 149, 149, 0.4) 100%
+  );
+}
+
+
+/*.ribbon {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: orange;
+  min-height: 0px;
+  padding-top: 0px;
+  justify-content: center;
+  z-index: 0;
+}*/
+
+.ribbon {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 1100px;
+  top: 0;
+  margin: 0 auto;
+  background: orange;
+  min-height: 0px;
+  padding-top: 0px;
+  justify-content: center;
+  z-index: 0;
+}
+
+.ribbon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -80px;
+  height: 80px;
+  background: inherit;
+  z-index: -1;
+}
+
+
+.ribbonInside {
+  max-width: calc(100% - 20px);
+  width: 100%;
+  margin: 0 10px;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: white;
+  z-index: 0;
+}
+
+.ribbonInside::after {
+  content: "";
+  position: absolute;
+  left: 10px; /* set this based on width of ribbon*/
+  right: 10px; /* set this based on width of ribbon*/
+  bottom: -80px;
+  height: 80px;
+  background: inherit;
+  z-index: 0;
+}
+
+/* change the max-width in ribbon too */
+.banner {
+  width:100%;
+  max-width: 1100px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  z-index: 1;
+  scroll-margin-top: 30px;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.expanding {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 300ms ease;
+}
+.expanding.open {
+  max-height: 500000px;
+}
+
+.dashed {
+  border-top: 4px dashed #bbb;
+  width: 100%;
+}
+
+p {
+  font-size: large;
+  font-weight: 400;
+  color: #555;
+  margin-left: 2rem;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 { 
+  margin:0;
+  color: #888;
+}
+
+h4 {
+  margin: 0;
+  color: #888;
+  font-style:italic;
+}
+
+.blue h2 {
+  color: #5eafff;
+}
+
+.orange h2 {
+  color: #ffa600;
+}
+.orange button {
+  border-width: 0;
+  border-radius: 5px;
+  background-color: #f7aa1b;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: medium;
+  font-weight: bolder;
+  color: #f9f9f9;
+  cursor: pointer;
+}
+
+.blue button {
+  border-width: 0;
+  border-radius: 5px;
+  background-color: #5eafff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: medium;
+  font-weight: bolder;
+  color: #f9f9f9;
+  cursor: pointer;
+}
+
+button:disabled {
+  border-width: 0;
+  border-radius: 5px;
+  background-color: #ccc;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: medium;
+  font-weight: bolder;
+  color: #f9f9f9;
+  cursor: not-allowed;
+}
+
+.orange strong {
+  color: #ffa600;
+}
+
+.blue strong {
+  color: #3ac4ff;
+}
+
+.contents {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: large;
+  text-decoration: none;
+  list-style: none;
+  padding-left: none;
+  margin-left: none;
+}
+
+.contents li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.contents li a {
+  text-decoration: none;
+}
+
+.blurb {
+  margin: 0.25em 0 0 3em;
+  font-size: 0.9em;
+  color: #777;
+  font-style: italic;
+}
+
+
+.contents li a::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  font-weight: bolder;
+  color: #ffa600;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+li {
+  color: #555;
+}
+
+a {
+  color: #555;
+}
+
+.centerer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* 
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+/* 
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
