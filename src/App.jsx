@@ -40,7 +40,7 @@ function App() {
           <VerticalSpace height={25}/>
           <RightShrink>
             <div>
-              <p>Hi!</p>
+              <p style={{fontSize: "1.5em"}}>Hi!</p>
               <p>I am <strong>Luke Siegel</strong>, a fourth year undergrad student at UW Madison studying
                 Computer Science and Math, with a certificate in Game Design.
               </p>
@@ -52,7 +52,7 @@ function App() {
             </div>
 
 
-            <Picture name="/me.jpg" alt="Picture of me :D" width={150} borderWidth={5} borderColor={orange} gradient={yellowSub}></Picture>
+            <Picture name="/images/me.jpg" alt="Picture of me :D" width={150} borderWidth={5} borderColor={orange} gradient={yellowSub}></Picture>
           </RightShrink>
           <VerticalSpace height={25} />
           <hr className="dashed"/>
@@ -73,35 +73,36 @@ function App() {
         <Ribbon color="blue">
           <p>Right now, I'm researching <strong>WiFi interference estimation</strong>, and soon I will additionally research <strong>writing compilers for quantum computers</strong>.</p>
           <p>Below lists some of my prior experience.</p>
-          <ExperienceCard img="/uwm_logo.png" alt="UW Madison" title="Department of Energy Detector Device Research" subtitle="University of Wisconsin--Madison under professor Barton Miller" subsubtitle="Summer 2025">
-            <p>My task was to attempt to exploit a detector device to find
-              vulnerabilities. This required extensive knowledge of low-level
-              computer science. I felt very entertained by this research and
-              hope to do more work in systems engineering.</p>
+          <ExperienceCard img="/images/uwm_logo.png" alt="UW Madison" title="Department of Energy Detector Device Research" subtitle="University of Wisconsin--Madison under professor Barton Miller" subsubtitle="Summer 2025">
+            <p>My research involved sifting through the source code of a a detector device to find
+              vulnerabilities. I had to employ extensive knowledge of low-level
+              computer science, eventually using direct modification of machine code to identify a potential vulnerability.</p>
+            <p>I found the low-level aspect to be particularly engaging. I would be interested in pursuing work in something similar, likely in embedded systems.</p>
           </ExperienceCard>
 
           <VerticalSpace height={20} />
 
-          <ExperienceCard img="/spectrum-brands-logo.png" alt="Spectrum Brands Logo" title="Automation Team Intern" subtitle="Spectrum Brands" subsubtitle="Summer 2024">
-            <p>I built dashboards to help the team collect and visualize their data to improve productivity. I gained experience working in a real business setting.</p>
+          <ExperienceCard img="/images/spectrum-brands-logo.png" alt="Spectrum Brands Logo" title="Automation Team Intern" subtitle="Spectrum Brands" subsubtitle="Summer 2024">
+            <p>For most of my internship, I built visually-appealing and easy-to-use dashboards to help the team collect and visualize their data. This allowed me to become familiar with query languages and how to make API calls since I had to aggregate data from a variety of sources. I also got experience with UiPath, discovering how teams operate in a real business setting.</p>
           </ExperienceCard>
 
           <VerticalSpace height={20} />
 
-          <ExperienceCard img="/uwm_logo.png" alt="UW Madison" title="Computer Science Peer Mentor" subtitle="University of Wisconsin--Madison with the CS Department" subsubtitle="September 2023 - May 2024">
-            <p>I assisted students with their weekly projects in the 300-level computer science course. Due to the large volume of students we encountered during peer mentor hours, I had to learn to communicate information succinctly while also personalizing the help for each student, and not just flat out providing them with the project solution.</p>
+          <ExperienceCard img="/images/uwm_logo.png" alt="UW Madison" title="Computer Science Peer Mentor" subtitle="University of Wisconsin--Madison with the CS Department" subsubtitle="September 2023 - May 2024">
+            <p>I assisted students with their weekly projects in a second-semester level computer science course. Due to the large volume of students, I had to communicate information succinctly while also personalizing the help for each student without merely providing the project solution.</p>
           </ExperienceCard>
 
           <VerticalSpace height={20} />
 
-          <ExperienceCard img="/ID_Tech.png" alt="iD Tech Logo" title="iD Tech Summer Camp Counselor" subtitle="Washington University in Saint Louis, MO" subsubtitle="Summer 2023">
-            <p>At iD Tech, I taught campers how to program their own Roblox games using Lua and Roblox Studio. I focused on teaching game design principles and the fundamentals of programming. This experience helped me strengthen skills of leadership, independence, and communication.</p>
+          <ExperienceCard img="/images/iD_Tech.png" alt="iD Tech Logo" title="iD Tech Summer Camp Counselor" subtitle="Washington University in Saint Louis, MO" subsubtitle="Summer 2023">
+            <p>I taught campers how to program their own Roblox games using Lua and Roblox Studio. I focused on teaching game design principles and the fundamentals of programming. Through the experience, I strengthened my skills of leadership, independence, and communication.</p>
           </ExperienceCard>
 
           <VerticalSpace height={20} />
 
-          <ExperienceCard img="/FIRST_Logo.png" alt="FIRST Logo" title="FIRST Robotics Team" subtitle="High School" subsubtitle="2019-2022">
-            <p>I spent my time building the mechanical structure of the robot while also wiring the eletrical components. It gave me an appreciation and knowledge into engineering.</p>
+          <ExperienceCard img="/images/FIRST_Logo.png" alt="FIRST Logo" title="FIRST Robotics Team" subtitle="High School" subsubtitle="2019-2022">
+            <p>Throughout high school I participated in my school's FIRST Robotics team. I was responsible for the electrical wiring of the robot, requiring a familiarity with circuits. Though, since wiring was only necessary at key points in the process, I spent most of my time building various mechanical components & learning mechanical engineering. Eventually as I grew with the team, I learned the SolidWorks CAD software and also adorned the responsibility of designing the model of the robot. In my final year, I took on the role of team captain, distributing work amongst the team.</p>
+            <p>My time in robotics was invaluable to me. It provided me with essential engineering skills that I still use daily. Not only that, but it allowed me to understand what it's like to be a leader. I definitely made some mistakes as the team captain, but I was able to learn from them & have changed my leadership strategy since.</p>
           </ExperienceCard>
 
 
@@ -150,14 +151,14 @@ function App() {
         <Ribbon color="blue">
           <h2>Tagger</h2>
           <h3>Rust</h3>
-          <h4><a target="_blank" rel="noopener noreferrer" href={"https://github.com/Yffriium/Tagger"}>https://github.com/Yffriium/Tagger</a></h4>
+          <h4><a className="link" target="_blank" rel="noopener noreferrer" href={"https://github.com/Yffriium/Tagger"}>https://github.com/Yffriium/Tagger</a></h4>
           <p>I was discontent with the basic functionality of sorting images using folders and names in the file explorer, so I made this program to alleviate my challenges. Tagger lets users add tags to images on their computer, then search for images using these tags. It only leaves a lightweight metadata file on the computer to track the tags on images between runs.</p>
           <VerticalSpace height={10}/>
           <hr className="dashed" />
           <VerticalSpace height={10}/>
           <h2>Badlang Language Server</h2>
           <h3>Java</h3>
-          <h4><a target="_blank" rel="noopener noreferrer" href={"https://github.com/glsiegel/536-Honors"}>https://github.com/glsiegel/536-Honors</a></h4>
+          <h4><a className="link" target="_blank" rel="noopener noreferrer" href={"https://github.com/glsiegel/536-Honors"}>https://github.com/glsiegel/536-Honors</a></h4>
           <p>In my Programming Languages and Compilers course, we invented a mock language called "Badlang". As part of the Honors project, I wanted to create a language server extension for Badlang that would provide intelligent error reporting and allow for importing between multiple files, all working in VSCode.</p>
 
           
@@ -166,14 +167,14 @@ function App() {
         <Ribbon color="orange">
           <h2>The Case of the Black Paper</h2>
           <h3>C# (Unity)</h3>
-          <h4><a target="_blank" rel="noopener noreferrer" href={"https://evanclaire.itch.io/the-case-of-the-black-paper"}>https://evanclaire.itch.io/the-case-of-the-black-paper</a></h4>
+          <h4><a className="link" target="_blank" rel="noopener noreferrer" href={"https://evanclaire.itch.io/the-case-of-the-black-paper"}>https://evanclaire.itch.io/the-case-of-the-black-paper</a></h4>
           <p>A puzzle game about using snapshots in time to piece together mysteries. Very much inspired by another video game, The Case of the Golden Idol. All artwork, music, and programming is 100% my own.</p>
           <p>I'm very happy with how this turned out. I spent about 2 months working on this game as much as I could, I felt completely self-motivated as I found the process rewarding. I can only dream to do something like this as part of my career.</p>
           <VerticalSpace height={20}/>
           <EqualSpaceRow>
-            <Picture name="farm.png" alt="Image of outdoor scene in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
-            <Picture name="words_screen.png" alt="Image of thinking screen in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
-            <Picture name="full_market_1.png" alt="Image of farmer's market scene in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub}/>
+            <Picture name="/images/farm.png" alt="Image of outdoor scene in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
+            <Picture name="/images/words_screen.png" alt="Image of thinking screen in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
+            <Picture name="/images/full_market_1.png" alt="Image of farmer's market scene in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub}/>
           </EqualSpaceRow>
           <VerticalSpace height={20} />
           <hr className="dashed" />
@@ -460,7 +461,7 @@ function Expandable(props) {
 }
 
 function Card(props) {
-  return <div style={{ border: "4px dashed #bbb", borderRadius: 30, paddingLeft: 20, paddingRight: 10, paddingTop: 5, paddingBottom: 5 }}>
+  return <div style={{ border: "4px dashed #bbb", borderRadius: 30, paddingLeft: 20, paddingRight: 10, paddingTop: 15, paddingBottom: 20 }}>
     {props.children}
   </div>
 }
@@ -519,7 +520,7 @@ function YoutubeEmbed(props) {
   return <iframe
     src={`https://www.youtube.com/embed/${props.videoId}`}
     title="Youtube Player"
-    style={{ border: "none", height: 216, width: 384}}
+    style={{ border: "none", maxWidth: 384, minWidth: 0, flex: "1 1 auto", aspectRatio: 16/9}}
   />
 
 }
@@ -529,11 +530,9 @@ function Carousel(props) {
   // it's ok. Call it extra safety in case I change my mind about one feature,
   // the whole thing will still work.
   const [index, setIndex] = useState(0);
-  return <div style={{ display: "flex", flexDirection: "row" }}>
+  return <div style={{ display: "flex", flexDirection: "row", gap: "5px", width: "100%", justifyContent: "center"}}>
     <button disabled={index == 0} onClick={() => setIndex(o => (o - 1) % props.elements.length)}>{"<"}</button>
-    <HorizontalSpace width={5}/>
     <YoutubeEmbed videoId={props.elements[index]} />
-    <HorizontalSpace width={5}/>
     <button disabled={index >= props.elements.length - 1} onClick={() => setIndex(o => (o+1)%props.elements.length)}>{">"}</button>
   </div>
 }

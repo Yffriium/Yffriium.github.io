@@ -8,7 +8,7 @@ body {
 
 
 .background {
-  background-image: url("/diamond.png");
+  background-image: url("/images/diamond.png");
   background-repeat: repeat;
   background-position: center;
   position: fixed;
@@ -116,7 +116,12 @@ body {
 
 .row {
   display: flex;
+  flex-direction: row;
   gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .row { flex-direction: column; }
 }
 
 .expanding {
@@ -254,6 +259,11 @@ li {
 
 a {
   color: #555;
+}
+a.link {
+  font-style: italic;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .centerer {
