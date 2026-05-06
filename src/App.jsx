@@ -61,7 +61,7 @@ function App() {
               
 
 
-            <Picture name="/images/me.jpg" alt="Picture of me :D" width={250} borderWidth={5} borderColor={"#505050"} gradient={"#303030"}></Picture>
+            <Picture name="/images/me.jpg" alt="Picture of me :D" height={350} borderWidth={5} borderColor={"#505050"} gradient={"#303030"}></Picture>
           </RightShrink>
           </Popout>
           
@@ -170,10 +170,18 @@ function App() {
             
           <VerticalSpace height={10} />
           <Popout>
-          <h2>Tagger</h2>
-          <h3>Rust</h3>
-          <h4><a className="link" target="_blank" rel="noopener noreferrer" href={"https://github.com/Yffriium/Tagger"}>https://github.com/Yffriium/Tagger</a></h4>
-          <p>I was discontent with the basic functionality of sorting images using folders and names in the file explorer, so I made this program to alleviate my challenges. Tagger lets users add tags to images on their computer, then search for images using these tags. It only leaves a lightweight metadata file on the computer to track the tags on images between runs.</p>
+            <RightShrink>
+              <div>
+                <h2>Tagger</h2>
+                <h3>Rust</h3>
+                <h4><a className="link" target="_blank" rel="noopener noreferrer" href={"https://github.com/Yffriium/Tagger"}>https://github.com/Yffriium/Tagger</a></h4>
+                <p>I was discontent with the basic functionality of sorting images using folders and names in the file explorer, so I made this program to alleviate my challenges. Tagger lets users add tags to images on their computer, then search for images using these tags. It only leaves a lightweight metadata file on the computer to track the tags on images between runs.</p>
+              </div>
+              <Picture name="/images/tag-panel-showcase.png" alt="Shows tag panel within Tagger application" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"}></Picture>
+
+            </RightShrink>
+            
+          
           </Popout>
           <VerticalSpace height={10} />
           <Popout>
@@ -197,11 +205,13 @@ function App() {
           <p>I was responsible for the game's design, the programming of many visual components, the level design, and all promotional materials.</p>
           
           <VerticalSpace height={20}/>
-          <EqualSpaceRow>
-            <Picture name="/images/dash-showcase-200x200.gif" alt="Gif showing dash ability" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
+          <EqualSpaceRow minWidth={"200px"}>
+            
             <Picture name="/images/cover2.png" alt="Game cover" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
             <Picture name="/images/teleport-showcase-200x200.gif" alt="Gif showing teleport ability" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
-            <Picture name="/images/area-split.png" alt="Regions of the game" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"}/>
+            
+              <Picture name="/images/dash-showcase-200x200.gif" alt="Gif showing dash ability" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
+              <Picture name="/images/area-split.png" alt="Regions of the game" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"}/>
             </EqualSpaceRow>
             </Popout>
           <VerticalSpace height={10} />
@@ -212,7 +222,7 @@ function App() {
           <p>A puzzle game about using snapshots in time to piece together mysteries. Very much inspired by another video game, The Case of the Golden Idol. All artwork, music, and programming is 100% my own.</p>
           <p>I'm very happy with how this turned out. I spent about 2 months working on this game as much as I could, I felt completely self-motivated as I found the process rewarding. I can only dream to do something like this as part of my career.</p>
           <VerticalSpace height={20}/>
-          <EqualSpaceRow>
+          <EqualSpaceRow minWidth={"200px"}>
             <Picture name="/images/farm.png" alt="Image of outdoor scene in the game" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
             <Picture name="/images/words_screen.png" alt="Image of thinking screen in the game" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
             <Picture name="/images/full_market_1.png" alt="Image of farmer's market scene in the game" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"}/>
@@ -503,7 +513,7 @@ function Picture(props) {
     height = "auto";
 
   } else if (props.height) {
-    width = "auto";
+    width = "100%";
     height = `${props.height}px`;
   }
 
@@ -511,8 +521,10 @@ function Picture(props) {
 
 
   let style = {
-    width: width,
-    height: height,
+    width: "auto",
+    height: "auto",
+    maxWidth: width,
+    maxHeight: height,
     objectFit: "contain"
   }
 
@@ -642,9 +654,9 @@ function Center(props) {
   </div>
 }
 
-function EqualSpaceRow(props) {
+function EqualSpaceRow({children, minWidth}) {
   return <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "10px" }}>
-    {props.children.map((elt) => <div style={{ display: "flex", flex: 1, justifyContent: "center", alignItems: "center", objectFit: "contain" }}>{elt}</div>)}
+    {children.map((elt) => <div style={{ display: "flex", flex: minWidth ? `1 1 ${minWidth}` : 1, justifyContent: "center", alignItems: "center", objectFit: "contain" }}>{elt}</div>)}
   </div>
 }
 
