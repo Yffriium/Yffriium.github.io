@@ -1,56 +1,51 @@
+@font-face {
+  font-family: "Linkage";
+  src: url("/fonts/Linkage.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Noto Sans", sans-serif;;
   margin:0;
 }
 
-
-.background {
-  background-image: url("/images/diamond.png");
-  background-repeat: repeat;
-  background-position: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-size: 50px 80px;
-
-  filter: grayscale(45%) brightness(86%);
-  
+body {
   margin: 0;
-  padding: 0;
 
+  background-image: url("/images/shield-pattern-colored.png");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+
+  /*filter: grayscale(45%) brightness(86%);*/
 }
 
-.background::after {
+body::after {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
+  pointer-events: none;
+
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0) 60%,
     rgba(149, 149, 149, 0.4) 100%
   );
+
+  z-index: -1;
 }
 
 
-/*.ribbon {
-  position: relative;
-  margin-top: 0;
-  margin-bottom: 0;
-  width: 100%;
-  max-width: 1100px;
+.ribbonlimiter {
+  max-width: min(1100px, 85vw);
   margin: 0 auto;
-  background: orange;
   min-height: 0px;
-  padding-top: 0px;
   justify-content: center;
   z-index: 0;
-}*/
+}
 
 .ribbon {
   position: relative;
@@ -86,6 +81,12 @@ body {
   padding: 1rem;
   box-sizing: border-box;
   background: white;
+
+  background-image: url("images/metal_floor.png");
+  background-repeat: repeat;        /* default: tiles both directions */
+  background-size: auto;            /* or set tile size, e.g. 50px 50px */
+  background-position: top left;    /* optional */
+
   z-index: 0;
 }
 
@@ -120,7 +121,7 @@ body {
   gap: 1rem;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .row { flex-direction: column; }
 }
 
@@ -140,9 +141,14 @@ body {
 
 p {
   font-size: large;
-  font-weight: 400;
   color: #555;
   margin-left: 2rem;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 h2 {
@@ -150,8 +156,15 @@ h2 {
 }
 
 h3 { 
-  margin:0;
-  color: #888;
+  font-size: large;
+  color: #555;
+  margin-left: 0;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 h4 {
@@ -167,28 +180,15 @@ h4 {
 .orange h2 {
   color: #ffa600;
 }
-.orange button {
-  border-width: 0;
-  border-radius: 5px;
-  background-color: #f7aa1b;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: medium;
-  font-weight: bolder;
-  color: #f9f9f9;
-  cursor: pointer;
-}
 
-.blue button {
+button {
   border-width: 0;
   border-radius: 5px;
-  background-color: #5eafff;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  background-color: #ffffff00;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   font-size: medium;
   font-weight: bolder;
   color: #f9f9f9;
@@ -209,14 +209,9 @@ button:disabled {
   cursor: not-allowed;
 }
 
-.orange strong {
-  color: #ffa600;
+strong {
+  color: #7B86FF;
 }
-
-.blue strong {
-  color: #3ac4ff;
-}
-
 .contents {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: large;
@@ -224,6 +219,15 @@ button:disabled {
   list-style: none;
   padding-left: none;
   margin-left: none;
+}
+
+.noto-sans {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 .contents li {
@@ -260,6 +264,7 @@ li {
 a {
   color: #555;
 }
+
 a.link {
   font-style: italic;
   overflow-wrap: anywhere;
@@ -271,6 +276,91 @@ a.link {
   justify-content: center;
   align-items: center;
 }
+
+.popoutSides {
+  box-sizing: border-box;
+  background-color: #303030;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0 0 8px 0;
+}
+
+.popoutTop {
+  box-sizing: border-box;
+  background-color: #505050;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.popoutInner {
+  box-sizing: border-box;
+  background-color: rgb(244, 244, 244);
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  margin: 0;
+  padding: 10px;
+}
+
+.metal-tiled {
+  background-image: url("/images/metal_floor.png");
+  background-repeat: repeat;
+  background-size: auto; /* or set specific tile size */
+  background-color: transparent; /* fallback if needed */
+}
+
+.popoutInner > *:first-child {margin-top: 0;}
+.popoutInner > *:last-child {margin-bottom: 0;}
+
+
+.section-title {
+  text-align: center;
+  width: 100%;
+  font-size: 6.2rem;
+  font-family: "Linkage", sans-serif;
+  background: linear-gradient(0deg, #fee035, #ffc507);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2.5px black;
+
+  font-weight: 400;
+  font-style: normal;
+
+  filter: drop-shadow(0px 8px 0px rgba(0.188, 0.188, 0.188, 1));
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.directory {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding: 0;
+}
+
+.directory li {
+  flex: 1 1 0;      /* grow evenly, shrink if needed */
+  min-width: 140px; /* prevents them from becoming too tiny */
+  list-style: none;
+}
+
+.directory a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #404040;
+
+  /* filter: drop-shadow(0px 1px 0px rgba(0.188, 0.188, 0.188, 0.3)); */
+}
+
 
 
 /* 

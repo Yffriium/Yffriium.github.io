@@ -4,75 +4,86 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-const orange = "#ffa600";
-const orangeDim = "#d08a07ff";
-const yellowMain = "#ffa600";
-const yellowSub = "#ffd78eff";
-const yellowBorder = "#ffeccaff";
-const blueMain = "#3ac4ffff";
-const blueSub = "#84d6ffff";
-const blueBorder = "#c9efffff";
+
+const popoutSidesDefault = "#303030ff";
+const popoutTopDefault = "#505050ff";
+const popoutInnerDefault = "#ffffffff";
+
+const orange = "#7B86FF";
+const orangeDim = "#7B86FF";
+const yellowMain = "#7B86FF";
+const yellowSub = "#303030ff";
+const yellowBorder = "#303030ff";
+const blueMain = "#7B86FF";
+const blueSub = "#303030ff";
+const blueBorder = "#303030ff";
 
 function App() {
-  const [offsetY, setOffsetY] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      setOffsetY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // const [offsetY, setOffsetY] = useState(0);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setOffsetY(window.scrollY);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEvaentListener("scroll", handleScroll);
+  // }, []);
 
-  const parallaxStyle = {
-    backgroundPosition: `13px ${offsetY * -0.25}px`,
-  };
+  // const parallaxStyle = {
+  //   backgroundPosition: `13px ${offsetY * -0.25}px`,
+  // };
 
   return (
     <>
-      <Ribbon color="blue">
+      {/* <Ribbon color="blue">
         <VerticalSpace height={5}/>
-      </Ribbon>
-      <div className="background" style={parallaxStyle}></div>
+      </Ribbon> */}
+      {/* <SectionBlock mainColor={yellowMain} subColor={"#ffffff"}>
+        <p>HeyHeyHey</p>
+      </SectionBlock> */}
+      <div className="background"></div>
 
       <div>
-        <SectionBanner mainColor={yellowMain} subColor={yellowSub} title="About Me"></SectionBanner>
-        <Ribbon color="orange">
-          <VerticalSpace height={25}/>
-          <RightShrink>
-            <div>
-              <p style={{fontSize: "1.5em"}}>Hi!</p>
-              <p>I am <strong>Luke Siegel</strong>, a fourth year undergrad student at UW Madison studying
-                Computer Science and Math, with a certificate in Game Design.
+        <VerticalSpace height={15}></VerticalSpace>
+        <FloatingSectionTitle name="Hi!"></FloatingSectionTitle>
+        <Popout limited={true} useMetal={true} topColor="#303030" sidesColor="#303030">
+          <VerticalSpace height={10} />
+          <Popout>
+            <RightShrink>
+            <div style={{display: "flex", flexDirection: "column", justifyContent:"center", height: "100%"}}>
+              <p>I am <strong>Luke Siegel</strong>, a recent alumni from UW Madison with a double major in Computer Science and Math.
               </p>
               <p>
                 I enjoy programming, music composition, sewing, biking, and designing (& playing) games.</p>
               <p>
                 My favorite language is undoubtedly <strong>Rust</strong>, though I'm also proficient in C, C#, Java, and Python.
               </p>
-            </div>
+              </div>
+              
 
 
-            <Picture name="/images/me.jpg" alt="Picture of me :D" width={150} borderWidth={5} borderColor={orange} gradient={yellowSub}></Picture>
+            <Picture name="/images/me.jpg" alt="Picture of me :D" width={250} borderWidth={5} borderColor={orange} gradient={yellowSub}></Picture>
           </RightShrink>
-          <VerticalSpace height={25} />
-          <hr className="dashed"/>
-          <h1 style={{ color: "#ffa600", marginBottom: 0}}>Contents</h1>
-          <p style={{fontStyle: "italic", color: "#777"}}>Click these!</p>
-          <ul className="contents" style={{display: "flex", flexDirection: "column", gap: "8px"}}>
-            <li><a href="#Experience">Experience</a></li>
-            <li><a href="#Coursework">Coursework</a></li>
-            <li><a href="#Programs">Programs</a></li>
-            <li><a href="#Games">Games</a></li>
-            <li><a href="#Music">Music</a></li>
-            <li><a href="#Writing">Writing</a></li>
+          </Popout>
+          
+          <VerticalSpace height={10} />
+          
+            <ul className="directory" style={{ display: "flex", flexDirection: "row", gap: "8px" }}>
+            <li><Popout topColor={"#505477"} innerColor={"#8690fc"}><h3><a href="#Experience">Experience</a></h3></Popout></li>
+              <li><Popout topColor={"#505477"} innerColor={"#8690fc"}><h3><a href="#Coursework">Coursework</a></h3></Popout></li>
+              <li><Popout topColor={"#505477"} innerColor={"#8690fc"}><h3><a href="#Projects">Projects</a></h3></Popout></li>
+              <li><Popout topColor={"#505477"} innerColor={"#8690fc"}><h3><a href="#Games">Games</a></h3></Popout></li>
+              <li><Popout topColor={"#505477"} innerColor={"#8690fc"}><h3><a href="#Music">Music</a></h3></Popout></li>
+              <li><Popout topColor={"#505477"} innerColor={"#8690fc"}><h3><a href="#Writing">Writing</a></h3></Popout></li>
           </ul>
+          {/* <p style={{fontStyle: "italic", color: "#fff", textAlign: "center"}}>Click these!</p> */}
+          
           <VerticalSpace height={25}/>
-        </Ribbon>
-        <SectionBanner mainColor={blueMain} subColor={blueSub} title="Experience"></SectionBanner>
+        </Popout>
+        <FloatingSectionTitle name="Experience"/>
+        <VerticalSpace height={15}></VerticalSpace>
+        {/* <SectionBanner mainColor={blueMain} subColor={blueSub} title="Experience"></SectionBanner> */}
 
-        <Ribbon color="blue">
-          <p>Right now, I'm researching <strong>WiFi interference estimation</strong>, and soon I will additionally research <strong>writing compilers for quantum computers</strong>.</p>
-          <p>Below lists some of my prior experience.</p>
+        <Popout limited={true} useMetal={true} topColor="#303030" sidesColor="#303030">
           <ExperienceCard img="/images/uwm_logo.png" alt="UW Madison" title="Department of Energy Detector Device Research" subtitle="University of Wisconsin--Madison under professor Barton Miller" subsubtitle="Summer 2025">
             <p>My research involved sifting through the source code of a a detector device to find
               vulnerabilities. I had to employ extensive knowledge of low-level
@@ -105,21 +116,13 @@ function App() {
             <p>My time in robotics was invaluable to me. It provided me with essential engineering skills that I still use daily. Not only that, but it allowed me to understand what it's like to be a leader. I definitely made some mistakes as the team captain, but I was able to learn from them & have changed my leadership strategy since.</p>
           </ExperienceCard>
 
+        </Popout>
 
-
-
-
-
-
-
-
-
-
-
-
-        </Ribbon>
-        <SectionBanner mainColor={yellowMain} subColor={yellowSub} title="Coursework"></SectionBanner>
-        <Ribbon color="orange">
+        <FloatingSectionTitle name="Coursework" />
+        <VerticalSpace height={15}/>
+  
+        <Popout limited={true} useMetal={true} topColor="#303030" sidesColor="#303030">
+          <Popout>
           <h2>Computer Science</h2>
           <ul className="contents" style={{display: "flex", flexDirection: "column", gap: "8px"}}>
             <li>Operating Systems<p className="blurb">Experience in C and systems-based programming</p></li>
@@ -129,7 +132,10 @@ function App() {
             <li>Building User Interfaces<p className="blurb">Knowledge in React, JS, CSS, HTML, and APIs</p></li>
             <li>Big Data Systems<p className="blurb">Consideration towards data storage and distributed systems</p></li>
             <li>Artificial Intelligence<p className="blurb">High-level familiarity with various kinds of AI (not just LLMs!)</p></li>
-          </ul>
+            </ul>
+          </Popout>
+          <VerticalSpace height={10}/>
+          <Popout>
           <h2>Math</h2>
           <ul className="contents" style={{display: "flex", flexDirection: "column", gap: "8px"}}>
             <li>Analysis I<p className="blurb">Exceptional level of challenge, required understanding math from a whole new lense</p></li>
@@ -138,33 +144,68 @@ function App() {
             <li>Linear Optimization<p className="blurb">Introduced very powerful problem solving tool, while also showcasing how to break down & solve complex problems</p></li>
             <li>Number Theory<p className="blurb">Knowledge of very practical skills like modular arithmetic and prime factorization</p></li>
             
-          </ul>
+            </ul>
+          </Popout>
+          <VerticalSpace height={10}/>
+          <Popout>
           <h2>Game Design</h2>
           <ul className="contents" style={{display: "flex", flexDirection: "column", gap: "8px"}}>
-            <li>Game Design I<p className="blurb">Singlehandedly created my first complete video game in this course</p></li>
-            <li>Game Design II<p className="blurb">Currently taking this one! Excited to see what we can make</p></li>
+            <li>Game Design I<p className="blurb">Created my first complete video game in this course</p></li>
+            <li>Game Design II<p className="blurb">Designed Rhythm Virus</p></li>
             <li>Video Games and Learning<p className="blurb">Produced an essay about how video games can invoke empathy in players</p></li>
-          </ul>
+            </ul>
+            </Popout>
         
-        </Ribbon>
-        <SectionBanner mainColor={blueMain} subColor={blueSub} title="Programs"></SectionBanner>
-        <Ribbon color="blue">
+        </Popout>
+        <FloatingSectionTitle name="Projects" />
+        <VerticalSpace height={15}/>
+        <Popout limited={true} useMetal={true} topColor="#303030" sidesColor="#303030">
+          <Popout>
+          <h2>Amaro LSP</h2>
+          <h3>Rust</h3>
+          <h4><a className="link" target="_blank" rel="noopener noreferrer" href={"https://github.com/qqq-wisc/amaro-vscode"}>https://github.com/qqq-wisc/amaro-vscode</a></h4>
+          <p>I added to the language server protocol implemention for the programming language Amaro* during my research at UW Madison. My contributions involved implementing generic type inference, autocomplete, on-hover type information, and error handling.</p>
+          <p style={{fontStyle: "italic", color: "#777"}}>*Amaro is a programming language that can generate compilers for a variety of quantum computer architectures.</p>
+          </Popout>
+            
+          <VerticalSpace height={10} />
+          <Popout>
           <h2>Tagger</h2>
           <h3>Rust</h3>
           <h4><a className="link" target="_blank" rel="noopener noreferrer" href={"https://github.com/Yffriium/Tagger"}>https://github.com/Yffriium/Tagger</a></h4>
           <p>I was discontent with the basic functionality of sorting images using folders and names in the file explorer, so I made this program to alleviate my challenges. Tagger lets users add tags to images on their computer, then search for images using these tags. It only leaves a lightweight metadata file on the computer to track the tags on images between runs.</p>
-          <VerticalSpace height={10}/>
-          <hr className="dashed" />
-          <VerticalSpace height={10}/>
+          </Popout>
+          <VerticalSpace height={10} />
+          <Popout>
           <h2>Badlang Language Server</h2>
           <h3>Java</h3>
           <h4><a className="link" target="_blank" rel="noopener noreferrer" href={"https://github.com/glsiegel/536-Honors"}>https://github.com/glsiegel/536-Honors</a></h4>
           <p>In my Programming Languages and Compilers course, we invented a mock language called "Badlang". As part of the Honors project, I wanted to create a language server extension for Badlang that would provide intelligent error reporting and allow for importing between multiple files, all working in VSCode.</p>
 
+          </Popout>
           
-        </Ribbon>
-        <SectionBanner mainColor={yellowMain} subColor={yellowSub} title="Games"></SectionBanner>
-        <Ribbon color="orange">
+          
+        </Popout>
+        <FloatingSectionTitle name="Games" />
+        <VerticalSpace height={15}/>
+        <Popout limited={true} useMetal={true} topColor="#303030" sidesColor="#303030">
+          <Popout>
+          <h2>Rhythm Virus</h2>
+          <h3>C# (Unity)</h3>
+          <h4><a className="link" target="_blank" rel="noopener noreferrer" href={"https://evanclaire.itch.io/rhythm-virus"}>https://evanclaire.itch.io/rhythm-virus</a></h4>
+          <p>A rhythm-based combat metroidvania, where you play as a virus infecting a computer. Our group of three created this game as part of Game Design II.</p>
+          <p>I was responsible for the game's design, the programming of many visual components, the level design, and all promotional materials.</p>
+          
+          <VerticalSpace height={20}/>
+          <EqualSpaceRow>
+            <Picture name="/images/dash-showcase-200x200.gif" alt="Gif showing dash ability" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
+            <Picture name="/images/cover2.png" alt="Game cover" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
+            <Picture name="/images/teleport-showcase-200x200.gif" alt="Gif showing teleport ability" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
+            <Picture name="/images/area-split.png" alt="Regions of the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub}/>
+            </EqualSpaceRow>
+            </Popout>
+          <VerticalSpace height={10} />
+          <Popout>
           <h2>The Case of the Black Paper</h2>
           <h3>C# (Unity)</h3>
           <h4><a className="link" target="_blank" rel="noopener noreferrer" href={"https://evanclaire.itch.io/the-case-of-the-black-paper"}>https://evanclaire.itch.io/the-case-of-the-black-paper</a></h4>
@@ -176,33 +217,48 @@ function App() {
             <Picture name="/images/words_screen.png" alt="Image of thinking screen in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
             <Picture name="/images/full_market_1.png" alt="Image of farmer's market scene in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub}/>
           </EqualSpaceRow>
-          <VerticalSpace height={20} />
-          <hr className="dashed" />
-          <VerticalSpace height={10}/>
+          </Popout>
+          <VerticalSpace height={10} />
+          <Popout>
           <h2>Probate</h2>
           <p>A board game about lies and deception within a family. Here's how it goes:</p>
           <p>After an elder dies, his descendents convene for the reading of the will, only to discover that no one got what they wanted! Players must make deals, bribe, and blackmail each other to get their desired items from the old man's estate, all without giving away too much information to other players about their secret goals.</p>
           <p>Currently I'm keeping the mechanics of the game a secret, since I'm looking to sell or produce it. I feel I have something very fun and thematically interesting here, so it's under wraps for now!</p>
+          </Popout>
+        </Popout>
+        <FloatingSectionTitle name="Music" />
+        <VerticalSpace height={15}/>
+        <Popout limited={true} useMetal={true} topColor="#303030" sidesColor="#303030">
           
-        </Ribbon>
-        <SectionBanner mainColor={blueMain} subColor={blueSub} title="Music"></SectionBanner>
-        <Ribbon color="blue">
-          <p>I make music too! I have a lot to learn, but I find the process very rewarding.</p>
-          <p>I use <strong>Ableton Live</strong> and <strong>Bosca Ceoil</strong> for my songs.</p>
-          <p>I post all my songs on my Youtube channel, but here are some of my favorites.</p>
-          <Center>
-            <Carousel elements={["81egcjyGpB8", "f6oHDsCy2Ys", "0ZU7fog37A4"]} />
-            <p style={{fontStyle: 'italic'}}>You can access my Youtube channel through the above video player!</p>
-          </Center>
+            <Popout>
+              <p>I make music too! I have a lot to learn, but I find the process very rewarding.</p>
+              <p>I use <strong>Ableton Live</strong> and <strong>Bosca Ceoil</strong> for my songs.</p>
+              <p>I post all my songs on my Youtube channel, but here are some of my favorites.</p>
+          </Popout>
+          <VerticalSpace height={10}/>
+            <Popout>
+              <Center>
+                <Carousel elements={["81egcjyGpB8", "f6oHDsCy2Ys", "0ZU7fog37A4"]} />
+                <p style={{fontStyle: 'italic'}}>You can access my Youtube channel through the above video player!</p>
+              </Center>
+            </Popout>
+            
           
-        </Ribbon>
-        <SectionBanner mainColor={yellowMain} subColor={yellowSub} title="Writing"></SectionBanner>
-        <Ribbon color="orange">
+          
+          
+          
+        </Popout>
+        <FloatingSectionTitle name="Writing" />
+        <VerticalSpace height={15}/>
+        <Popout limited={true} useMetal={true} topColor="#303030" sidesColor="#303030">
+
           <p>I've also done some writing, usually satirical or science fiction. Find them here:</p>
+          <Popout>
           <h2>Video Games & Learning Paper</h2>
           <p>For my Video Games & Learning class, I wrote a paper about how developers can most effectively promote empathy for animals in their games.</p>
           <p style={{fontStyle: "italic"}}><a target="_blank" rel="noopener noreferrer" style={{overflowWrap: "anywhere", wordBreak: "break-word"}} href={"https://drive.google.com/file/d/1ES0FEKLCYfxCyRoV5tSpefMEO5qc9wIu/view?usp=sharing"}>https://drive.google.com/file/d/1ES0FEKLCYfxCyRoV5tSpefMEO5qc9wIu/view?usp=sharing</a></p>
-          
+          </Popout>
+          <Popout>
           <h2>The Lover of the Planet</h2>
           <VerticalSpace height={20}/>
           <ButtonExpandable>
@@ -344,11 +400,12 @@ Svetlana's front page. As for the unused remainder of the scientist's packet, sh
 adjacent recycling bin. After all, she could be pretty confident that it would never be seen again
 by human eyes.</p>
             </>
-          </ButtonExpandable>
+            </ButtonExpandable>
+            </Popout>
         
           
         
-        </Ribbon>
+        </Popout>
 
 
 
@@ -372,8 +429,46 @@ function SectionBanner(props) {
   </div>
 }
 
-function VerticalSpace(props) {
-  return <div style={{ height: props.height }}></div>
+function Popout({ sidesColor, topColor, innerColor, useMetal, depth, thickness, limited, children }) {
+  return <div>
+    <div className={limited ? "popoutSides ribbonlimiter" : "popoutSides"} style={{
+      ...(sidesColor && { backgroundColor: sidesColor }),
+      ...(depth && { padding: `0px 0px ${depth}px 0px` })
+
+    }}>
+      <div className="popoutTop" style={{
+        ...(topColor && { backgroundColor: topColor }),
+        ...(thickness && {padding: thickness})
+      }}>
+      <div className={useMetal ? "popoutInner metal-tiled" : "popoutInner"} style={innerColor ? {backgroundColor: innerColor} : undefined}>
+        {children}
+      </div>
+      </div>
+      </div>
+  </div>
+}
+
+function PopoutButton({ sidesColor, topColor, innerColor, useMetal, depth, thickness, limited, onClick, children, buttonWidth }) {
+  return <button onClick={onClick} style={{width: buttonWidth}}>
+    <div className={limited ? "popoutSides ribbonlimiter" : "popoutSides"} style={{
+      ...(sidesColor && { backgroundColor: sidesColor }),
+      ...(depth && { padding: `0px 0px ${depth}px 0px` })
+
+    }}>
+      <div className="popoutTop" style={{
+        ...(topColor && { backgroundColor: topColor }),
+        ...(thickness && {padding: thickness})
+      }}>
+      <div className={useMetal ? "popoutInner metal-tiled" : "popoutInner"} style={innerColor ? {backgroundColor: innerColor} : undefined}>
+        {children}
+      </div>
+      </div>
+      </div>
+  </button>
+}
+
+function VerticalSpace({ height }) {
+  return <div style={{ height: height }}></div>
 }
 
 function HorizontalSpace(props) {
@@ -440,7 +535,7 @@ function ButtonExpandable(props) {
   const [open, setOpen] = useState(false);
   return <div>
     <LeftShrink>
-      <button onClick={() => setOpen(o => !o)}>{open ? "See less" : "See more"}</button>
+      <PopoutButton thickness={"4px"} topColor={"#505477"} innerColor={"#8690fc"} buttonWidth={"150px"} onClick={() => setOpen(o => !o)}><h3 style={{color: "#404040"}}>{open ? "Show less" : "Show more"}</h3></PopoutButton>
       <hr className="dashed" /></LeftShrink>
     <motion.div
       animate={{ height: open ? "auto" : 0 }}
@@ -476,14 +571,14 @@ function TitleSet(props) {
 
 function ExperienceCard(props) {
   const [open, setOpen] = useState(false);
-  return <Card>
+  return <Popout>
     <LeftShrink>
       <Picture name={props.img} alt={props.alt} width={150}></Picture>
       <div style={{height: "100%", display: "flex", flexDirection: "column"}}>
         <TitleSet title={props.title} subtitle={props.subtitle} subsubtitle={props.subsubtitle}></TitleSet>
         <VerticalSpace height={30}/>
         <BottomJustify>
-          <button style={{width: "150px"}} onClick={() => setOpen(o => !o)}>{open ? "Show less" : "Show more"}</button>
+          <PopoutButton thickness={"4px"} topColor={"#505477"} innerColor={"#8690fc"} buttonWidth={"150px"} onClick={() => setOpen(o => !o)}><h3 style={{color: "#404040"}}>{open ? "Show less" : "Show more"}</h3></PopoutButton>
         </BottomJustify>
       </div>
 
@@ -491,7 +586,7 @@ function ExperienceCard(props) {
     <Expandable open={open}>
       {props.children}
     </Expandable>
-  </Card>
+  </Popout>
 }
 
 function Ribbon(props) {
@@ -547,6 +642,10 @@ function EqualSpaceRow(props) {
   return <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "10px" }}>
     {props.children.map((elt) => <div style={{ display: "flex", flex: 1, justifyContent: "center", alignItems: "center", objectFit: "contain" }}>{elt}</div>)}
   </div>
+}
+
+function FloatingSectionTitle({ name }) {
+  return <h1 className="section-title" id={name}>{name}</h1>
 }
 
 export default App
