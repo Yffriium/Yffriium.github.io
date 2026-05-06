@@ -121,7 +121,7 @@ body::after {
   gap: 1rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .row { flex-direction: column; }
 }
 
@@ -152,13 +152,22 @@ p {
 }
 
 h2 {
+  color: #7B86FF;
+  margin-left: 0;
   margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 h3 { 
   font-size: large;
   color: #555;
   margin-left: 0;
+  margin: 0;
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
@@ -168,9 +177,14 @@ h3 {
 }
 
 h4 {
-  margin: 0;
   color: #888;
-  font-style:italic;
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 .blue h2 {
@@ -194,11 +208,11 @@ button {
   color: #f9f9f9;
   cursor: pointer;
 }
-
+/* 
 button:disabled {
   border-width: 0;
   border-radius: 5px;
-  background-color: #ccc;
+  background-color: #;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -207,7 +221,7 @@ button:disabled {
   font-weight: bolder;
   color: #f9f9f9;
   cursor: not-allowed;
-}
+} */
 
 strong {
   color: #7B86FF;

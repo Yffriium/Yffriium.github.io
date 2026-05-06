@@ -43,7 +43,7 @@ function App() {
       <div className="background"></div>
 
       <div>
-        <VerticalSpace height={15}></VerticalSpace>
+        <VerticalSpace height={60}></VerticalSpace>
         <FloatingSectionTitle name="Hi!"></FloatingSectionTitle>
         <Popout limited={true} useMetal={true} topColor="#303030" sidesColor="#303030">
           <VerticalSpace height={10} />
@@ -61,7 +61,7 @@ function App() {
               
 
 
-            <Picture name="/images/me.jpg" alt="Picture of me :D" width={250} borderWidth={5} borderColor={orange} gradient={yellowSub}></Picture>
+            <Picture name="/images/me.jpg" alt="Picture of me :D" width={250} borderWidth={5} borderColor={"#505050"} gradient={"#303030"}></Picture>
           </RightShrink>
           </Popout>
           
@@ -198,10 +198,10 @@ function App() {
           
           <VerticalSpace height={20}/>
           <EqualSpaceRow>
-            <Picture name="/images/dash-showcase-200x200.gif" alt="Gif showing dash ability" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
-            <Picture name="/images/cover2.png" alt="Game cover" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
-            <Picture name="/images/teleport-showcase-200x200.gif" alt="Gif showing teleport ability" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
-            <Picture name="/images/area-split.png" alt="Regions of the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub}/>
+            <Picture name="/images/dash-showcase-200x200.gif" alt="Gif showing dash ability" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
+            <Picture name="/images/cover2.png" alt="Game cover" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
+            <Picture name="/images/teleport-showcase-200x200.gif" alt="Gif showing teleport ability" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
+            <Picture name="/images/area-split.png" alt="Regions of the game" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"}/>
             </EqualSpaceRow>
             </Popout>
           <VerticalSpace height={10} />
@@ -213,27 +213,27 @@ function App() {
           <p>I'm very happy with how this turned out. I spent about 2 months working on this game as much as I could, I felt completely self-motivated as I found the process rewarding. I can only dream to do something like this as part of my career.</p>
           <VerticalSpace height={20}/>
           <EqualSpaceRow>
-            <Picture name="/images/farm.png" alt="Image of outdoor scene in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
-            <Picture name="/images/words_screen.png" alt="Image of thinking screen in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub} />
-            <Picture name="/images/full_market_1.png" alt="Image of farmer's market scene in the game" height={200} borderWidth={5} borderColor={orange} gradient={yellowSub}/>
+            <Picture name="/images/farm.png" alt="Image of outdoor scene in the game" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
+            <Picture name="/images/words_screen.png" alt="Image of thinking screen in the game" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"} />
+            <Picture name="/images/full_market_1.png" alt="Image of farmer's market scene in the game" height={200} borderWidth={5} borderColor={"#505050"} gradient={"#303030"}/>
           </EqualSpaceRow>
           </Popout>
           <VerticalSpace height={10} />
-          <Popout>
+          {/* <Popout>
           <h2>Probate</h2>
           <p>A board game about lies and deception within a family. Here's how it goes:</p>
           <p>After an elder dies, his descendents convene for the reading of the will, only to discover that no one got what they wanted! Players must make deals, bribe, and blackmail each other to get their desired items from the old man's estate, all without giving away too much information to other players about their secret goals.</p>
           <p>Currently I'm keeping the mechanics of the game a secret, since I'm looking to sell or produce it. I feel I have something very fun and thematically interesting here, so it's under wraps for now!</p>
-          </Popout>
+          </Popout> */}
         </Popout>
         <FloatingSectionTitle name="Music" />
         <VerticalSpace height={15}/>
         <Popout limited={true} useMetal={true} topColor="#303030" sidesColor="#303030">
           
             <Popout>
-              <p>I make music too! I have a lot to learn, but I find the process very rewarding.</p>
-              <p>I use <strong>Ableton Live</strong> and <strong>Bosca Ceoil</strong> for my songs.</p>
-              <p>I post all my songs on my Youtube channel, but here are some of my favorites.</p>
+              <p>I like to make music too! I'm very inspired by video game soundtracks.</p>
+              <p>I use <strong>Ableton Live</strong> for my songs. I used to use the free program <strong>Bosca Ceoil</strong>.</p>
+              <p>All of my songs are available on Youtube. Use the video player to see my favorites.</p>
           </Popout>
           <VerticalSpace height={10}/>
             <Popout>
@@ -251,13 +251,12 @@ function App() {
         <FloatingSectionTitle name="Writing" />
         <VerticalSpace height={15}/>
         <Popout limited={true} useMetal={true} topColor="#303030" sidesColor="#303030">
-
-          <p>I've also done some writing, usually satirical or science fiction. Find them here:</p>
           <Popout>
           <h2>Video Games & Learning Paper</h2>
           <p>For my Video Games & Learning class, I wrote a paper about how developers can most effectively promote empathy for animals in their games.</p>
           <p style={{fontStyle: "italic"}}><a target="_blank" rel="noopener noreferrer" style={{overflowWrap: "anywhere", wordBreak: "break-word"}} href={"https://drive.google.com/file/d/1ES0FEKLCYfxCyRoV5tSpefMEO5qc9wIu/view?usp=sharing"}>https://drive.google.com/file/d/1ES0FEKLCYfxCyRoV5tSpefMEO5qc9wIu/view?usp=sharing</a></p>
           </Popout>
+          <VerticalSpace height={10}/>
           <Popout>
           <h2>The Lover of the Planet</h2>
           <VerticalSpace height={20}/>
@@ -407,6 +406,8 @@ by human eyes.</p>
         
         </Popout>
 
+        <VerticalSpace height={120}/>
+
 
 
       </div>
@@ -475,10 +476,13 @@ function HorizontalSpace(props) {
   return <div style={{width: props.width}}></div>
 }
 
-function LeftShrink(props) {
+function LeftShrink({centerRight,children}) {
   return <div className="row">
-    {props.children[0]}
-    <div style={{ flex: 1 }}>{props.children[1]}</div>
+    {children[0]}
+    <div style={{
+      flex: 1,
+      ...(centerRight && {display: "flex", alignItems: "center"})
+    }}>{children[1]}</div>
   </div>
 }
 
@@ -534,7 +538,7 @@ function Picture(props) {
 function ButtonExpandable(props) {
   const [open, setOpen] = useState(false);
   return <div>
-    <LeftShrink>
+    <LeftShrink centerRight={true}>
       <PopoutButton thickness={"4px"} topColor={"#505477"} innerColor={"#8690fc"} buttonWidth={"150px"} onClick={() => setOpen(o => !o)}><h3 style={{color: "#404040"}}>{open ? "Show less" : "Show more"}</h3></PopoutButton>
       <hr className="dashed" /></LeftShrink>
     <motion.div
@@ -576,7 +580,7 @@ function ExperienceCard(props) {
       <Picture name={props.img} alt={props.alt} width={150}></Picture>
       <div style={{height: "100%", display: "flex", flexDirection: "column"}}>
         <TitleSet title={props.title} subtitle={props.subtitle} subsubtitle={props.subsubtitle}></TitleSet>
-        <VerticalSpace height={30}/>
+        <VerticalSpace height={10}/>
         <BottomJustify>
           <PopoutButton thickness={"4px"} topColor={"#505477"} innerColor={"#8690fc"} buttonWidth={"150px"} onClick={() => setOpen(o => !o)}><h3 style={{color: "#404040"}}>{open ? "Show less" : "Show more"}</h3></PopoutButton>
         </BottomJustify>
@@ -625,10 +629,10 @@ function Carousel(props) {
   // it's ok. Call it extra safety in case I change my mind about one feature,
   // the whole thing will still work.
   const [index, setIndex] = useState(0);
-  return <div style={{ display: "flex", flexDirection: "row", gap: "5px", width: "100%", justifyContent: "center"}}>
-    <button disabled={index == 0} onClick={() => setIndex(o => (o - 1) % props.elements.length)}>{"<"}</button>
+  return <div style={{ display: "flex", flexDirection: "row", gap: "5px", width: "100%", justifyContent: "center" }}>
+    <PopoutButton disabled={index == 0} onClick={() => setIndex(o => ((o + props.elements.length - 1) % props.elements.length))} thickness={"4px"} topColor={"#505477"} innerColor={"#8690fc"}><h3 style={{ color: "#404040" }}>{"<"}</h3></PopoutButton>
     <YoutubeEmbed videoId={props.elements[index]} />
-    <button disabled={index >= props.elements.length - 1} onClick={() => setIndex(o => (o+1)%props.elements.length)}>{">"}</button>
+    <PopoutButton disabled={index >= props.elements.length - 1} onClick={() => setIndex(o => (o+1)%props.elements.length)} thickness={"4px"} topColor={"#505477"} innerColor={"#8690fc"}><h3 style={{ color: "#404040" }}>{">"}</h3></PopoutButton>
   </div>
 }
 
